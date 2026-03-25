@@ -57,3 +57,18 @@ background-color: #BF2E3B;
 .promo-banners .right-side .promo-card2{
 background-color: #0186C4;
 }
+.footer .footer-imgs img{
+    width: 80px;
+}
+.gray-text{
+ color:#999999;
+}
+.footer-imgs img {
+  filter: grayscale(100%);
+  opacity: 0.7; 
+  transition: 0.3s; 
+}
+
+.footer-imgs img:hover {
+  filter: grayscale(0%); 
+}
