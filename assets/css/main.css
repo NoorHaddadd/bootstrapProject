@@ -2,6 +2,9 @@
 :root{
     --primaryColor:#4172DC;
 }
+/* * {
+  outline: 1px solid red;
+} */
 .ml-90{
     margin-left: 90px;
 }
@@ -44,10 +47,20 @@ height: 150px;
   .hero .card {
     display: none;
   }
+  .footer .copyright{
+    display: none;
+  }
 }
 
 @media only screen and (max-width: 576px) {
   .hero  {
+    display: none;
+  }
+  .footer .dropdown,
+  .footer .social-media,
+  .footer hr ,
+  .footer p,
+  .footer .copyright {
     display: none;
   }
 }
@@ -68,7 +81,6 @@ background-color: #0186C4;
   opacity: 0.7; 
   transition: 0.3s; 
 }
-
 .footer-imgs img:hover {
   filter: grayscale(0%); 
 }
