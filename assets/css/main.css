@@ -66,10 +66,22 @@ height: 150px;
   }
 }
 .promo-banners .left-side .promo-card1{
-background-color: #BF2E3B;
+background: #BF2E3B;
 }
 .promo-banners .right-side .promo-card2{
-background-color: #0186C4;
+background: #0186C4;
+}
+.promo-banners2 .left-side .promo-card1{
+background: #D11FB5;
+}
+.promo-banners2 .right-side .promo-card2{
+background: #0186C4;
+}
+.promo-banners2 i{
+  text-decoration: underline;
+}
+.promo-banners i{
+  text-decoration: underline;
 }
 .footer .links-section{
     background-color: #D1E2EB;
