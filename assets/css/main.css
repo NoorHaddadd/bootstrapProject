@@ -28,7 +28,7 @@
 
     background-color: black;
 }
-.hero .card .card-footer h6{
+.hero .card .card-footer h3{
 font-size: 15px;
 font-weight: 200;
 }
@@ -60,7 +60,8 @@ height: 150px;
   .footer .social-media,
   .footer hr ,
   .footer p,
-  .footer .copyright {
+  .footer .copyright,
+  .footer .newsletter {
     display: none;
   }
 }
@@ -70,9 +71,27 @@ background-color: #BF2E3B;
 .promo-banners .right-side .promo-card2{
 background-color: #0186C4;
 }
+.footer .links-section{
+    background-color: #D1E2EB;
+    padding: 150px;
+    
+} 
+.footer .links-section h2{
+font-size: 14px;
+}
+.footer .links-section a{
+    text-decoration: none;
+    font-size: 14px;
+    color: #555555;
+}
+
 .footer .footer-imgs img{
     width: 80px;
 }
+.footer .card{
+    background-color: #7296AB;
+}
+
 .gray-text{
  color:#999999;
 }
@@ -84,3 +103,14 @@ background-color: #0186C4;
 .footer-imgs img:hover {
   filter: grayscale(0%); 
 }
+.footer {
+    padding-top: 120px;
+}
+
+.footer .newsletter-card {
+    top: -100px; 
+    left: 50%;
+    transform: translateX(-50%);
+    color:white
+}
+
