@@ -94,6 +94,9 @@ height: 150px;
 .scroll-mobile::-webkit-scrollbar {
   display: none; 
 }
+.trending .card-body h5,p{
+  font-size: 14px;
+}
 .promo-banners .left-side .promo-card1{
 background: #BF2E3B;
 }
