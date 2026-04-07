@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/css/main.css">
+</head>
+
+
+<!-- <header class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container ml-90">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+                aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div>
+                <img src="./assets/img/Logo.png" />
+                <a class="navbar-brand" href="#">Luminae</a>
+            </div>
+              <i class="fa-solid fa-bag-shopping"  data-bs-toggle="collapse" data-bs-target="#navbarText"
+                aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            
+            </i>
+                
+             <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Pricing</a>
+                    </li>
+                </ul>
+                <span class="navbar-text">
+                    Navbar text with an inline element
+                </span>
+        </div>
+        </div>
+    </header> --->
+<section class="header">
+    <nav class="navbar navbar-expand-lg bg-white border-bottom py-3">
+        <div class="container">
+            <div class="d-flex justify-content-between w-100 align-items-center">
+
+                <div class="d-flex align-items-center gap-2">
+                    <img src="./assets/img/Logo.png" width="40" alt="Logo" />
+                    <span class="fw-bold fs-5">Luminae</span>
+                </div>
+
+                <form class="d-none d-md-flex align-items-center border search-box mx-4">
+                    <input class="form-control border-0" type="search" placeholder="Search Products" />
+                    <select class="form-select border-0">
+                        <option>All categories</option>
+                    </select>
+                    <button class="btn border-start">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </form>
+
+                <div class="d-flex align-items-center gap-4">
+                    <div class="d-none d-md-flex gap-3">
+                        <a href="#" class="text-dark text-decoration-none">About us</a>
+                        <a href="#" class="text-dark text-decoration-none">Blog</a>
+                        <a href="#" class="text-dark text-decoration-none">Contact us</a>
+                        <a href="#" class="text-dark text-decoration-none">Help & support</a>
+                    </div>
+
+                    <nav class="social-media">
+                        <div class="d-flex justify-content-center gap-3">
+                            <a href="" target="_blank" class="text-dark">
+                                <i class="fab fa-instagram fa-lg"></i>
+                            </a>
+                            <a href="" target="_blank" class="text-dark">
+                                <i class="fab fa-facebook fa-lg"></i>
+                            </a>
+                            <a href="" target="_blank" class="text-dark">
+                                <i class="fab fa-telegram fa-lg"></i>
+                            </a>
+                        </div>
+                    </nav>
+                </div>
+
+            </div>
+        </div>
+    </nav>
+    <nav class="black-navbar bg-dark text-white py-2">
+        <div class="container d-flex align-items-center justify-content-between">
+
+            <div class="nav-left d-flex align-items-center gap-5">
+
+                <div class="categories d-flex align-items-center gap-2">
+                    <i class="fa-solid fa-bars-staggered"></i>
+                    <span>Categories</span>
+                </div>
+
+                <div class="currencies">
+                    <a class="nav-link dropdown-toggle text-white p-0" href="#" data-bs-toggle="dropdown">
+                        USD
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">USD</a></li>
+                        <li><a class="dropdown-item" href="#">EUR</a></li>
+                        <li><a class="dropdown-item" href="#">SAR</a></li>
+                    </ul>
+                </div>
+
+                <div class="languages">
+                    <a class="nav-link dropdown-toggle text-white p-0" href="#" data-bs-toggle="dropdown">
+                        English
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">English</a></li>
+                        <li><a class="dropdown-item" href="#">Arabic</a></li>
+                        <li><a class="dropdown-item" href="#">French</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="nav-center d-none d-lg-flex align-items-center gap-3 custom-border px-4">
+                <img src="./assets/img/men-cosmetics-navbar2.png" width="50" />
+
+                <div class="d-flex flex-column">
+                    <span class="">Weekly Men's Toiletries Coupons</span>
+                    <p class="">We extend exclusive discounts to our male clientele</p>
+                </div>
+            </div>
+
+            <div class="nav-right d-flex align-items-center gap-5">
+
+                <div class="nav-item d-flex align-items-center gap-1">
+                    <i class="fa-regular fa-user"></i>
+                    <span>Sign in</span>
+                </div>
+
+                <div class="nav-item d-flex align-items-center gap-1">
+                    <i class="fa-regular fa-heart"></i>
+                    <span>Favorites</span>
+                </div>
+
+                <div class="nav-item d-flex align-items-center gap-1">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span>Card</span>
+                    <span class="badge rounded-pill text-bg-success">3</span>
+
+                </div>
+
+            </div>
+
+        </div>
+    </nav>
+
+
+</section>
+
+<div class="page-links p-4">
+    <div class="container">
+        <div class="d-flex justify-content-start">
+            <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);"
+                aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a class="text-decoration-none text-dark" href="index.html">HomePage</a>
+                    </li>
+                    <li class="breadcrumb-item"><a class="text-decoration-none text-dark" href="index.html">Woman</a>
+                    </li>
+                    <li class="breadcrumb-item"><a class="text-decoration-none text-dark"
+                            href="details.html">Colthes</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Zara</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+</div>
+
+<section class="product-details p-5">
+    <div class="container">
+        <div class="row">
+
+
+            <div class="container">
+                <div class="row g-4 justify-content-center">
+                        <div class="col-md-6 d-flex d-flex-column gap-1">
+                            <div class="d-flex flex-wrap overflow-auto w-25 rounded-start">
+                                <img src="./assets/img/zara1.png" alt="img-thumbnail">
+                                <img src="./assets/img/zara2.png" alt="img-thumbnail">
+                                <img src="./assets/img/zara3.png" alt="img-thumbnail">
+                                <img src="./assets/img/zara4.png" alt="img-thumbnail">
+                                <img src="./assets/img/zara5.png" alt="img-thumbnail">
+                            </div>
+                            <div class="ratio ratio-1x1 mb-2">
+                                <img src="./assets/img/zaraMain.png" class="w-100" style="object-fit:cover;"
+                                    alt="Product">
+                            </div>
+                        </div>
+                        <div class="product-heading col-md-6 p-5">
+                            <div class="d-flex d-flex-column justify-content-between">
+                                <div>
+                                    <h3 class="fw-bold">SHORT PRINTED DRESS</h3>
+                                    <span>$39.99</span>
+                                </div>
+                                <button class="heart btn border rounded-circle p-0">
+                                    <i class="fa-solid fa-heart text-secondary"></i>
+                                </button>
+                            </div>
+                            <!-- <div class="d-flex d-flex-column gap-3">
+                                <div class="left-side row col-lg-2 gap-5">
+                                    <div class="size">
+                                        <h6 class="fw-bold">Size</h6>
+                                    </div>
+                                    <div class="color">
+                                        <h6 class="fw-bold">Color</h6>
+                                    </div>
+                                    <div class="shipping">
+                                        <h6 class="fw-bold">Shipping</h6>
+                                    </div>
+                                    <div class="quantity">
+                                        <h6 class="fw-bold">Quantity</h6>
+                                    </div>
+                                </div>
+                                <div class="right-side row gap-5">
+                                    <div class="row gap-1">
+                                        <div class="d-flex gap-2 flex-wrap">
+                                            <button class="btn btn-outline-dark " disabled>XS</button>
+                                            <button class="btn btn btn-outline-dark ">S</button>
+                                            <button class="btn btn btn-outline-dark ">M</button>
+                                            <button class="btn btn btn-outline-dark ">L</button>
+                                            <button class="btn btn btn-outline-dark " disabled>XL</button>
+
+
+                                        </div>
+                                        <a href="#" class="small text-decoration-none orang-color">Size guideline</a>
+                                    </div>
+                                    <div class="d-flex colors gap-4">
+                                        <button class="btn rounded-circle p-2 border brown"></button>
+                                        <button class="btn rounded-circle p-2 border green"></button>
+                                        <button class="btn rounded-circle p-2 border baby-blue"></button>
+                                        <button class="btn rounded-circle p-2 border orange"></button>
+                                    </div>
+                                    <div>
+                                        <h6>Free Shipping to Victoria teritory</h6>
+                                        <small class="text-muted">Delivery Time: 14–17 days</small>
+                                    </div>
+
+                                </div>
+                            </div> -->
+                            <div class="size my-4 d-flex d-flex-column gap-5">
+                                <h6>Size</h6>
+                                <div class="row gap-1">
+                                    <div class="d-flex gap-2 flex-wrap">
+                                        <button class="btn btn-outline-dark " disabled>XS</button>
+                                        <button class="btn btn btn-outline-dark ">S</button>
+                                        <button class="btn btn btn-outline-dark ">M</button>
+                                        <button class="btn btn btn-outline-dark ">L</button>
+                                        <button class="btn btn btn-outline-dark " disabled>XL</button>
+
+
+                                    </div>
+                                    <a href="#" class="small text-decoration-none orang-color">Size guideline</a>
+                                </div>
+                            </div>
+
+
+                            <div class="colors my-4 d-flex d-flex-column align-items-start gap-5">
+                                <h6>Color</h6>
+                                <div class="d-flex  gap-4">
+                                    <button class="btn rounded-circle p-2 border brown"></button>
+                                    <button class="btn rounded-circle p-2 border green"></button>
+                                    <button class="btn rounded-circle p-2 border baby-blue"></button>
+                                    <button class="btn rounded-circle p-2 border orange"></button>
+                                </div>
+                            </div>
+
+
+                            <div class="shipping my-4 d-flex d-flex-column gap-3">
+                                <h6>Shipping</h6>
+                                <div>
+
+                                    <div class="dropdown">
+                                        <h6 class="nav-link dropdown-toggle  p-0" href="#" data-bs-toggle="dropdown">
+                                            Free Shipping to Victoria teritory
+                                        </h6>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="#">Hebron</a></li>
+                                            <li><a class="dropdown-item" href="#">Florida</a></li>
+                                        </ul>
+                                    </div>
+                                    <small class="text-muted">Delivery Time: 14 – 17 days</small>
+                                </div>
+
+                            </div>
+
+                            <div class="quantity my-4 d-flex d-flex-column gap-3  align-items-center">
+                                <h6>Quantity</h6>
+                                <div class="d-flex d-flex-column align-items-center gap-3 ">
+                                    <div class="input-group d-flex d-flex-column border border-2 rounded">
+                                        <button class="btn" id="minusBtn">-</button>
+                                        <input type="number" class="form-control text-center" value="2" min="1"
+                                            id="quantityInput">
+                                        <button class="btn" id="plusBtn">+</button>
+                                    </div>
+                                    <span class="fw-medium">50 available / 104 sold</span>
+                                </div>
+                            </div>
+
+                            <div class="insurance mb-3 p-3 border">
+                                <p class="mb-0 fw-bold fs-4">$79.98</p>
+                                <hr>
+                                <p><i class="fa-solid fa-circle-plus"></i> Add shipping insurance for $9( declared value
+                                    only if the package gets lost, stolen or damaged.)</p>
+                            </div>
+
+                            <div class="mb-3 d-flex gap-2 d-flex-column">
+                                <button class="btn btn-primary p-3 w-50">SHOP NOW</button>
+                                <button class="btn btn-outline-secondary p-3 w-50">ADD TO BASKET</button>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+
+                    <div class="tabs pt-5">
+
+                        <nav>
+                            <div class="nav nav-tabs justify-content-center" id="nav-tab" role="tablist">
+                                <button class="nav-link active text-uppercase" data-bs-toggle="tab"
+                                    data-bs-target="#nav-product-details">Product details</button>
+                                <button class="nav-link text-uppercase fw-bold" data-bs-toggle="tab"
+                                    data-bs-target="#nav-reviews">Reviews (5)</button>
+                                <button class="nav-link text-uppercase fw-bold" data-bs-toggle="tab"
+                                    data-bs-target="#nav-shipping">Shipping & Payment</button>
+                            </div>
+                        </nav>
+
+                        <div class="tab-content pt-4" id="nav-tabContent">
+                            <div class="tab-pane fade" id="nav-reviews">
+                                <p class="text-muted">Customer reviews will appear here...</p>
+                            </div>
+
+                            <div class="tab-pane fade" id="nav-shipping">
+                                <p class="text-muted">Shipping and payment information...</p>
+                            </div>
+                            <div class="tab-pane fade show active" id="nav-product-details">
+
+                                <div class="row">
+
+                                    <div class="col-md-6">
+                                        <h6 class="fw-bold">Product Description</h6>
+                                        <p class="text-muted mt-2">
+                                            Short dress with a plunging V-neckline and tie detail. Wide sleeves falling
+                                            below the elbow.
+                                            Contrast bead details. Invisible back zip fastening.
+                                        </p>
+
+                                        <h6 class="fw-bold mt-4">Product Description</h6>
+                                        <ul class="text-muted ps-3 d-flex flex-column gap-3">
+                                            <li>Length | Regular</li>
+                                            <li>Pattern | Floral</li>
+                                            <li>Size | 38</li>
+                                            <li>Fit | Regular fit</li>
+                                            <li>Age group | Adult</li>
+                                            <li>Leg opening | Wide leg</li>
+                                            <li>Sleeve length | Long sleeve</li>
+                                            <li>Package contents | 2 pcs</li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <h6 class="fw-bold">Composition</h6>
+                                        <p class="text-muted mt-2">
+                                            We work with monitoring programmes to ensure compliance with our social,
+                                            environmental and health and safety standards for our products. To assess
+                                            compliance, we have developed a programme of audits and continuous
+                                            improvement plans.
+                                            <br> OUTER SHELL <br>
+                                            90% cotton 10% linen
+                                        </p>
+
+
+
+                                        <h6 class="fw-bold mt-4">Care instructions</h6>
+                                        <ul class="text-muted ps-3 d-flex flex-column gap-3">
+                                            <li>Machine wash at max. 30°C/86°F with short spin cycle</li>
+                                            <li>Iron at a maximum of 110°C/230°F</li>
+                                            <li>Do not dry clean</li>
+                                            <li>Do not tumble dry</li>
+                                            <li>Wash inside out</li>
+                                            <li>Wash separately</li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+
+                                <div class="text-center mt-4">
+                                    <button class="btn btn-link text-decoration-none text-dark">↑ SHOW LESS</button>
+                                </div>
+
+                            </div>
+
+
+
+                        </div>
+
+                    </div>
+
+                    <hr>
+
+
+                    <div class="might-like mt-4">
+                        <h5 class="fw-bold mb-3">You Might Also Like</h5>
+
+                        <div class="row g-3 justify-content-center ">
+
+                            <div class="mightlike-card col-lg-3 col-md-6 col-12 d-flex gap-2 justify-content-center">
+
+
+                                <img src="./assets/img/might-like.png" width="80" alt="Product">
+
+                                <div>
+
+                                    <div class="fw-bold small  mt-2">
+                                        SHORT PRINTED DRESS
+                                    </div>
+
+                                    <div class="d-flex align-items-center gap-2 mb-2">
+                                        <span class="fw-bold text-danger">$69.99</span>
+                                        <span class="text-muted text-decoration-line-through small">$129.99</span>
+                                        <span class="badge bg-danger">-40%</span>
+                                    </div>
+                                    <button
+                                        class="btn btn-outline-secondary w-100  d-flex justify-content-between px-3">
+
+                                        <span class="fw-bold">$39</span>
+                                        <span class="small fw-bold">Add to cart</span>
+
+                                    </button>
+
+                                </div>
+                            </div>
+
+                            <div class="mightlike-card col-lg-3 col-md-6 col-12 d-flex gap-2 justify-content-center">
+
+
+                                <img src="./assets/img/might-like.png" width="80">
+                                <div>
+                                    <div class="fw-bold small mt-2">SHORT PRINTED DRESS</div>
+                                    <div class="d-flex align-items-center gap-2 mb-2">
+                                        <span class="fw-bold text-danger">$69.99</span>
+                                        <span class="text-muted text-decoration-line-through small">$129.99</span>
+                                        <span class="badge bg-danger">-40%</span>
+                                    </div>
+                                    <button
+                                        class="btn btn-outline-secondary w-100  d-flex justify-content-between px-3">
+
+                                        <span class="fw-bold">$39</span>
+                                        <span class="small fw-bold">Add to cart</span>
+
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="mightlike-card col-lg-3 col-md-6 col-12 d-flex gap-2 justify-content-center">
+
+
+                                <img src="./assets/img/might-like.png" width="80">
+                                <div>
+                                    <div class="fw-bold small  mt-2">SHORT PRINTED DRESS</div>
+                                    <div class="d-flex align-items-center gap-2 mb-2">
+                                        <span class="fw-bold text-danger">$69.99</span>
+                                        <span class="text-muted text-decoration-line-through small">$129.99</span>
+                                        <span class="badge bg-danger">-40%</span>
+                                    </div>
+                                    <button
+                                        class="btn btn-outline-secondary w-100  d-flex justify-content-between px-3">
+
+                                        <span class="fw-bold">$39</span>
+                                        <span class="small fw-bold">Add to cart</span>
+
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="mightlike-card col-lg-3 col-md-6 col-12 d-flex gap-2 justify-content-center">
+
+
+                                <img src="./assets/img/might-like.png" width="80">
+                                <div>
+                                    <div class="fw-bold small  mt-2">SHORT PRINTED DRESS</div>
+                                    <div class="d-flex align-items-center gap-2 mb-2">
+                                        <span class="fw-bold text-danger">$69.99</span>
+                                        <span class="text-muted text-decoration-line-through small">$129.99</span>
+                                        <span class="badge bg-danger">-40%</span>
+                                    </div>
+                                    <button
+                                        class="btn btn-outline-secondary w-100  d-flex justify-content-between px-3">
+                                        <span class="fw-bold">$39</span>
+                                        <span class="small fw-bold">Add to cart</span>
+                                    </button>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+</section>
+<section class="footer  position-relative">
+
+    <div class="newsletter  position-relative">
+        <div class="card newsletter-card  position-absolute w-auto p-3">
+            <div class="card-body text-center">
+                <h3 class="card-title">Luminae Store</h3>
+                <p class="card-text">Register your email not to miss the last minutes off + Free delivery</p>
+                <div class="input-group mx-auto w-75">
+                    <input type="email" class="form-control" placeholder="Enter your email"
+                        aria-label="Enter your email" aria-describedby="button-addon2">
+                    <button class="btn btn-light" type="button" id="button-addon2"><i
+                            class="fa-regular fa-paper-plane"></i></button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="links-section">
+        <div class="container ">
+            <div class="row row-gap-5">
+                <div class="d-flex flex-column align-items-center text-start  col-lg-3 col-6 gap-3">
+                    <h2>Company</h2>
+                    <a href="#">About Us</a>
+                    <a href="#">Our Store</a>
+                    <a href="#">Contact us</a>
+                </div>
+
+                <div class="d-flex flex-column align-items-center text-start col-lg-3 col-6 gap-3">
+                    <h2>Career Opportunities</h2>
+                    <a href="#">Selling Programs</a>
+                    <a href="#">Advertise</a>
+                    <a href="#">Cooperation</a>
+                </div>
+
+                <div class="d-flex flex-column align-items-center text-start col-lg-3 col-6 gap-3">
+                    <h2>How to Buy</h2>
+                    <a href="#">Making Payments</a>
+                    <a href="#">Delivery Options</a>
+                    <a href="#">Buyer Protection</a>
+                    <a href="#">New User Guide</a>
+                </div>
+
+                <div class="d-flex flex-column align-items-center text-start col-lg-3 col-6 gap-3">
+                    <h2>Help</h2>
+                    <a href="#">Contact Us</a>
+                    <a href="#">FAQ</a>
+                    <a href="#">Privacy Policy</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="container px-5 ">
+        <div class="row">
+            <div class="d-flex justify-content-center justify-content-md-between py-3">
+                <div class="footer-imgs d-flex gap-4 align-items-center">
+                    <img src="./assets/img/footer-visa.png" class="img-fluid" alt="visa image">
+                    <img src="./assets/img/footer-mastercard.png" class="img-fluid" alt="master card image">
+                    <img src="./assets/img/footer-paypal.png" class="img-fluid" alt="paypal image">
+                </div>
+                <div class="dropdown">
+                    <button class="dropdown-toggle border-0 bg-white" type="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        English
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item active" href="#" selected>English</a></li>
+                        <li><a class="dropdown-item" href="#">Arabic</a></li>
+                        <li><a class="dropdown-item" href="#">French</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <hr class="border border-secondary border-2 opacity-25">
+
+        <div class="d-flex justify-content-between gap-3 my-5">
+            <p>165-179 Forster Road City of Monash, Melbourne, Australia</p>
+            <p class="copyright gray-text">©2023 Copyright in reserved for lumine shop</p>
+            <nav class="social-media">
+                <div class="d-flex justify-content-center gap-3">
+                    <a href="" target="_blank" class="text-dark">
+                        <i class="fab fa-facebook fa-lg"></i>
+                    </a>
+                    <a href="" target="_blank" class="text-dark">
+                        <i class="fab fa-instagram fa-lg"></i>
+                    </a>
+                    <a href="" target="_blank" class="text-dark">
+                        <i class="fab fa-telegram fa-lg"></i>
+                    </a>
+            </nav>
+        </div>
+    </div>
+    </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+
+</body>
+
+</html>

@@ -1,10 +1,15 @@
+@import url('https://fonts.cdnfonts.com/css/lato');
 
 :root{
     --primaryColor:#4172DC;
+    --primaryFontFamily:lato;
 }
 /* * {
   outline: 1px solid red;
 } */
+ *{
+  font-family: 'Lato';
+ }
 .header nav .nav-link{
   color: #555555;
 }
@@ -114,6 +119,49 @@ background: #0186C4;
 }
 .promo-banners i{
   text-decoration: underline;
+}
+.product-details .product-heading .heart{
+  height: 40px;
+  width: 40px;
+}
+.orang-color{
+  color:#FF7A00;
+}
+.product-details .colors .brown{
+ background-color: #800020;
+}
+.product-details .colors .green{
+ background-color: #008000;
+}
+.product-details .colors .baby-blue{
+ background-color: #0000FF;
+}
+.product-details .colors .orange{
+ background-color: #FF7A00;
+}
+.quantity .input-group{
+  width: 30%;
+}
+.quantity .input-group button{
+  width: 10px;
+}
+
+.insurance {
+  background-color:#C4C4C4 ;
+}
+.tabs .nav-tabs .nav-item.show .nav-link,
+ .tabs .nav-tabs .nav-link.active {
+  font-weight: bold;
+ }
+.tabs .nav-tabs .nav-link {
+  border: none;
+  border-bottom: solid 1px var(--bs-border-color);
+}
+.tabs .nav-link{
+  color : #9D9D9D;
+}
+.might-like .mightlike-card {
+  min-width: 300px;
 }
 .footer .links-section{
     background-color: #D1E2EB;

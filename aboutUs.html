@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsive E-commerce Product Page</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+  .size-btn.active, .color-btn.active { border-width: 2px; border-color: #0d6efd !important; }
+  .product-description.collapsed { max-height: 120px; overflow: hidden; }
+  .product-description.show { max-height: 2000px; }
+</style>
+</head>
+<body>
+
+<section class="shop py-5">
+  <div class="container">
+    <div class="row">
+
+      <!-- Sidebar Desktop -->
+      <div class="col-lg-3 mb-4 d-none d-lg-block">
+        <h5 class="fw-bold mb-3">All Categories</h5>
+        <!-- Brand -->
+        <div class="mb-4">
+          <h6 class="fw-bold">Brand</h6>
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <!-- Model -->
+        <div class="mb-4">
+          <h6 class="fw-bold">Model</h6>
+          <div class="form-check"><input class="form-check-input" type="checkbox" id="modelShort"><label class="form-check-label" for="modelShort">Short</label></div>
+          <div class="form-check"><input class="form-check-input" type="checkbox" id="modelMidi"><label class="form-check-label" for="modelMidi">Midi length</label></div>
+          <div class="form-check"><input class="form-check-input" type="checkbox" id="modelSweater"><label class="form-check-label" for="modelSweater">Sweater</label></div>
+        </div>
+        <!-- Style -->
+        <div class="mb-4">
+          <h6 class="fw-bold">Style</h6>
+          <div class="form-check"><input class="form-check-input" type="checkbox" id="styleCasual"><label class="form-check-label" for="styleCasual">Casual</label></div>
+          <div class="form-check"><input class="form-check-input" type="checkbox" id="styleBusiness"><label class="form-check-label" for="styleBusiness">Business</label></div>
+          <div class="form-check"><input class="form-check-input" type="checkbox" id="styleElegant"><label class="form-check-label" for="styleElegant">Elegant</label></div>
+        </div>
+        <!-- Color -->
+        <div class="mb-4">
+          <h6 class="fw-bold">Color</h6>
+          <div class="d-flex gap-2">
+            <button class="btn btn-sm rounded-circle p-2 border color-btn" style="background-color:#000;"></button>
+            <button class="btn btn-sm rounded-circle p-2 border color-btn" style="background-color:#f00;"></button>
+            <button class="btn btn-sm rounded-circle p-2 border color-btn" style="background-color:#ff0;"></button>
+            <button class="btn btn-sm rounded-circle p-2 border color-btn" style="background-color:#0f0;"></button>
+          </div>
+        </div>
+        <!-- Size -->
+        <div class="mb-4">
+          <h6 class="fw-bold">Size</h6>
+          <div class="d-flex flex-wrap gap-2">
+            <button class="btn btn-outline-secondary btn-sm size-btn">2XS</button>
+            <button class="btn btn-outline-secondary btn-sm size-btn">XS</button>
+            <button class="btn btn-outline-secondary btn-sm size-btn">S</button>
+            <button class="btn btn-outline-secondary btn-sm size-btn">M</button>
+            <button class="btn btn-outline-secondary btn-sm size-btn">L</button>
+            <button class="btn btn-outline-secondary btn-sm size-btn">XL</button>
+            <button class="btn btn-outline-secondary btn-sm size-btn">2XL</button>
+            <button class="btn btn-outline-secondary btn-sm size-btn">3XL</button>
+          </div>
+        </div>
+        <!-- Price -->
+        <div class="mb-4">
+          <h6 class="fw-bold">Price</h6>
+          <div class="d-flex align-items-center gap-2 mb-2">
+            <input type="number" class="form-control form-control-sm" placeholder="$0" style="width: 70px;">
+            <span>-</span>
+            <input type="number" class="form-control form-control-sm" placeholder="$500" style="width: 70px;">
+          </div>
+          <input type="range" class="form-range" min="0" max="500" step="10">
+          <small class="text-muted">878 products found</small>
+        </div>
+      </div>
+
+      <!-- Mobile Filter Button -->
+      <div class="col-12 d-lg-none mb-3">
+        <button class="btn btn-primary w-100" data-bs-toggle="offcanvas" data-bs-target="#mobileFilter">Filter & Sort</button>
+      </div>
+
+      <!-- Offcanvas for Mobile Filter -->
+      <div class="offcanvas offcanvas-start" tabindex="-1" id="mobileFilter">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title">Filter Products</h5>
+          <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+          <!-- replicate sidebar content here -->
+          <h6 class="fw-bold">Brand</h6>
+          <input type="text" class="form-control mb-3" placeholder="Search">
+          <h6 class="fw-bold">Model</h6>
+          <div class="form-check"><input class="form-check-input" type="checkbox"><label class="form-check-label">Short</label></div>
+          <div class="form-check"><input class="form-check-input" type="checkbox"><label class="form-check-label">Midi</label></div>
+          <div class="form-check"><input class="form-check-input" type="checkbox"><label class="form-check-label">Sweater</label></div>
+          <!-- Repeat Style, Color, Size, Price -->
+        </div>
+      </div>
+
+      <!-- Products Grid / Product Details Column -->
+      <div class="col-lg-9">
+
+        <!-- Product Details -->
+        <div class="row g-4">
+          <!-- Images + Info -->
+          <div class="col-12">
+            <div class="row g-3">
+              <div class="col-lg-6">
+                <div class="ratio ratio-1x1 mb-2">
+                  <img src="./assets/img/product-main.png" class="w-100 h-100" style="object-fit:cover;" alt="Product">
+                </div>
+                <div class="d-flex gap-2 overflow-auto">
+                  <img src="./assets/img/thumb1.png" class="img-thumbnail flex-shrink-0" style="width:80px;" alt="Thumb">
+                  <img src="./assets/img/thumb2.png" class="img-thumbnail flex-shrink-0" style="width:80px;" alt="Thumb">
+                  <img src="./assets/img/thumb3.png" class="img-thumbnail flex-shrink-0" style="width:80px;" alt="Thumb">
+                  <img src="./assets/img/thumb4.png" class="img-thumbnail flex-shrink-0" style="width:80px;" alt="Thumb">
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <h3 class="fw-bold">SHORT PRINTED DRESS</h3>
+                <p class="h5 text-danger">$39.99</p>
+
+                <!-- Size -->
+                <div class="mb-2">
+                  <h6 class="fw-bold d-flex justify-content-between">
+                    Size <a href="#" class="small text-decoration-none">Size guideline</a>
+                  </h6>
+                  <div class="d-flex gap-2 flex-wrap">
+                    <button class="btn btn-outline-secondary btn-sm size-btn">XS</button>
+                    <button class="btn btn-outline-secondary btn-sm size-btn">S</button>
+                    <button class="btn btn-outline-secondary btn-sm size-btn">M</button>
+                    <button class="btn btn-outline-secondary btn-sm size-btn">L</button>
+                    <button class="btn btn-outline-secondary btn-sm size-btn">XL</button>
+                  </div>
+                </div>
+
+                <!-- Color -->
+                <div class="mb-2">
+                  <h6 class="fw-bold">Color</h6>
+                  <div class="d-flex gap-2">
+                    <button class="btn btn-sm rounded-circle p-2 border color-btn" style="background-color:#800020;"></button>
+                    <button class="btn btn-sm rounded-circle p-2 border color-btn" style="background-color:#008000;"></button>
+                    <button class="btn btn-sm rounded-circle p-2 border color-btn" style="background-color:#0000FF;"></button>
+                    <button class="btn btn-sm rounded-circle p-2 border color-btn" style="background-color:#FFA500;"></button>
+                  </div>
+                </div>
+
+                <!-- Quantity -->
+                <div class="mb-2">
+                  <h6 class="fw-bold">Quantity</h6>
+                  <div class="input-group w-50 mb-1">
+                    <button class="btn btn-outline-secondary" id="minusBtn">-</button>
+                    <input type="number" class="form-control text-center" value="2" min="1" id="quantityInput">
+                    <button class="btn btn-outline-secondary" id="plusBtn">+</button>
+                  </div>
+                  <small class="text-muted">50 available / 104 sold</small>
+                </div>
+
+                <!-- Price / Insurance -->
+                <div class="mb-3 p-3 bg-light border">
+                  <p class="mb-0 fw-bold">$79.98</p>
+                  <small>Add shipping insurance for $9...</small>
+                </div>
+
+                <!-- Buttons -->
+                <div class="mb-3 d-flex gap-2 flex-column">
+                  <button class="btn btn-primary w-100">SHOP NOW</button>
+                  <button class="btn btn-outline-secondary w-100">ADD TO BASKET</button>
+                </div>
+
+                <!-- Tabs -->
+                <ul class="nav nav-tabs mb-3" id="productTab" role="tablist">
+                  <li class="nav-item"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#detailsTab">Details</button></li>
+                  <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#reviewsTab">Reviews</button></li>
+                  <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#shippingTab">Shipping</button></li>
+                </ul>
+                <div class="tab-content">
+                  <div class="tab-pane fade show active" id="detailsTab">
+                    <div class="product-description collapsed" id="productDesc">
+                      <p>Short dress with plunging V-neckline, wide sleeves, floral pattern...</p>
+                    </div>
+                    <button class="btn btn-link p-0" id="toggleDesc">SHOW MORE</button>
+                  </div>
+                  <div class="tab-pane fade" id="reviewsTab"><p class="small">Customer reviews...</p></div>
+                  <div class="tab-pane fade" id="shippingTab"><p class="small">Shipping & Payment info...</p></div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <!-- You Might Also Like -->
+          <div class="col-12 mt-4">
+            <h5 class="fw-bold mb-3">You Might Also Like</h5>
+            <div class="d-flex gap-2 overflow-auto">
+              <div class="card border-0 flex-shrink-0" style="width:120px;">
+                <img src="./assets/img/p1.png" class="card-img-top" alt="Product">
+                <div class="card-body p-2"><p class="mb-1 small">Short Printed Dress</p><span class="fw-bold text-danger">$69.99</span></div>
+              </div>
+              <div class="card border-0 flex-shrink-0" style="width:120px;">
+                <img src="./assets/img/p2.png" class="card-img-top" alt="Product">
+                <div class="card-body p-2"><p class="mb-1 small">Short Printed Dress</p><span class="fw-bold text-danger">$69.99</span></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<section class="shop py-5">
+  <div class="container">
+    <div class="row">
+
+      <!-- Sidebar for Desktop -->
+      <div class="col-lg-3 mb-4 d-none d-lg-block">
+        <!-- Include previous sidebar content here -->
+        <h5 class="fw-bold mb-3">All Categories</h5>
+        <!-- Brand -->
+        <div class="mb-4">
+          <h6 class="fw-bold">Brand</h6>
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <!-- Model -->
+        <div class="mb-4">
+          <h6 class="fw-bold">Model</h6>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="modelShort">
+            <label class="form-check-label" for="modelShort">Short</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="modelMidi">
+            <label class="form-check-label" for="modelMidi">Midi length</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="modelSweater">
+            <label class="form-check-label" for="modelSweater">Sweater</label>
+          </div>
+        </div>
+        <!-- Style, Color, Size, Price ... ضع بقية الفلاتر هنا كما في النسخة السابقة -->
+      </div>
+
+      <!-- Mobile Filter Button -->
+      <div class="col-12 d-lg-none mb-3">
+        <button class="btn btn-primary w-100" data-bs-toggle="offcanvas" data-bs-target="#mobileFilter" aria-controls="mobileFilter">
+          Filter & Sort
+        </button>
+      </div>
+
+      <!-- Offcanvas for Mobile Filter -->
+      <div class="offcanvas offcanvas-start" tabindex="-1" id="mobileFilter" aria-labelledby="mobileFilterLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="mobileFilterLabel">Filter Products</h5>
+          <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+          <!-- Include same sidebar content here -->
+          <h6 class="fw-bold">Brand</h6>
+          <input type="text" class="form-control mb-3" placeholder="Search">
+          <h6 class="fw-bold">Model</h6>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="mModelShort">
+            <label class="form-check-label" for="mModelShort">Short</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="mModelMidi">
+            <label class="form-check-label" for="mModelMidi">Midi length</label>
+          </div>
+          <!-- ضع بقية الفلاتر هنا بنفس أسلوب النسخة السابقة -->
+        </div>
+      </div>
+
+      <!-- Products -->
+      <div class="col-lg-9">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+          <h5 class="fw-bold">Women <span class="text-muted">(110 items)</span></h5>
+          <select class="form-select w-auto">
+            <option>Sort by</option>
+            <option>Price</option>
+            <option>Popular</option>
+          </select>
+        </div>
+
+        <!-- Grid -->
+        <div class="row g-4">
+          <!-- كرر الكروت كما في النسخة السابقة -->
+          <div class="col-md-4 col-sm-6 d-flex">
+            <div class="card w-100 h-100 border-0 shadow-sm">
+              <div class="ratio ratio-1x1">
+                <img src="./assets/img/p1.png" class="w-100 h-100" style="object-fit:cover;">
+              </div>
+              <div class="card-body">
+                <h6 class="mb-1">Mango</h6>
+                <p class="text-muted small">Kimono & Caftan - Black</p>
+                <div class="text-warning small mb-1">★★★★☆ <span class="text-muted">(289)</span></div>
+                <div>
+                  <span class="fw-bold text-danger">$228</span>
+                  <span class="text-muted text-decoration-line-through">$290</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+ 
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-commerce UI</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container py-5">
+
+  <!-- Header Section -->
+  <div class="row align-items-center mb-5">
+    <div class="col-lg-7 col-md-12">
+      <h1>Providing the best experience to make your <span class="text-primary">Online Shopping</span></h1>
+      <p>We offer the best service that will make it easier...</p>
+
+      <div class="d-flex gap-4 mt-4">
+        <div>
+          <h4>20+</h4>
+          <p>Shopping Categories</p>
+        </div>
+        <div>
+          <h4>10+</h4>
+          <p>Different Services</p>
+        </div>
+        <div>
+          <h4>4M+</h4>
+          <p>Happy Users</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-5 col-md-12 text-center">
+      <div class="border p-3">
+        <blockquote class="blockquote">
+          <p>We have made many people satisfied with our Platform</p>
+        </blockquote>
+      </div>
+    </div>
+  </div>
+
+  <!-- Service Section -->
+  <div class="row align-items-center mb-5">
+    <div class="col-lg-6 col-md-12 mb-4 mb-lg-0">
+      <h3>We offer the best service that will <span class="text-primary">make it easier</span></h3>
+      <p>Discover unparalleled convenience...</p>
+
+      <div class="row row-cols-1 row-cols-md-2 g-3 mt-3">
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Fast Delivery</h5>
+              <p class="card-text">Experience quick shipping with our trusted partners.</p>
+              <a href="#" class="btn btn-primary btn-sm">Read More</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">24/7 Support</h5>
+              <p class="card-text">We are here to help you anytime with our team.</p>
+              <a href="#" class="btn btn-primary btn-sm">Read More</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Easy Returns</h5>
+              <p class="card-text">Return your orders quickly with no hassle.</p>
+              <a href="#" class="btn btn-primary btn-sm">Read More</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Secure Payments</h5>
+              <p class="card-text">Your transactions are safe with our secure system.</p>
+              <a href="#" class="btn btn-primary btn-sm">Read More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-6 col-md-12 text-center">
+      <img src="./assets/img/zaraMain.png" class="img-fluid rounded" alt="Team Image">
+    </div>
+  </div>
+
+  <!-- Contact Section -->
+  <div class="row align-items-center">
+    <div class="col-lg-6 col-md-12 mb-4 mb-lg-0">
+      <div class="p-4 bg-dark text-white rounded">
+        <h4>Tell us about your <span class="text-warning">Concerns</span></h4>
+        <form>
+          <input type="text" class="form-control mb-3" placeholder="Your Name">
+          <input type="email" class="form-control mb-3" placeholder="Your Email">
+          <textarea class="form-control mb-3" placeholder="Your Message"></textarea>
+          <button class="btn btn-primary w-100">Send</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="col-lg-6 col-md-12 text-center">
+      <img src="fashion.jpg" class="img-fluid rounded" alt="Fashion Models">
+    </div>
+  </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
