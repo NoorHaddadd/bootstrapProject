@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/css/main.css">
+</head>
+
+
+<!-- <header class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container ml-90">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+                aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div>
+                <img src="./assets/img/Logo.png" />
+                <a class="navbar-brand" href="#">Luminae</a>
+            </div>
+              <i class="fa-solid fa-bag-shopping"  data-bs-toggle="collapse" data-bs-target="#navbarText"
+                aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            
+            </i>
+                
+             <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Pricing</a>
+                    </li>
+                </ul>
+                <span class="navbar-text">
+                    Navbar text with an inline element
+                </span>
+        </div>
+        </div>
+    </header> --->
+   <section class="header">
+  <nav class="navbar navbar-expand-lg bg-white border-bottom py-3">
+    <div class="container">
+
+      <div class="d-flex justify-content-between w-100 align-items-center">
+        <button class="navbar-toggler d-flex d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="offcanvas offcanvas-start d-flex d-md-none" tabindex="-1" id="mobileMenu">
+
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title">Menu</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+          </div>
+
+          <div class="offcanvas-body">
+
+            <a class="nav-link" href="#">About us</a>
+            <a class="nav-link" href="#">Blog</a>
+            <a class="nav-link" href="#">Contact us</a>
+            <a class="nav-link" href="#">Help & support</a>
+
+            <hr>
+
+            <div class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle active" href="./details.html" role="button" data-bs-toggle="dropdown">
+                Woman
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="details.html">Clothes</a></li>
+                <li><a class="dropdown-item" href="#">Electronic</a></li>
+              </ul>
+            </div> <a class="nav-link" href="#">Male</a>
+            <a class="nav-link" href="#">Mother-Child</a>
+            <a class="nav-link" href="#">Home & Furniture</a>
+            <a class="nav-link" href="#">Cosmetics</a>
+
+            <hr>
+
+            <a class="nav-link text-white" href="auth.html">Sign in</a>
+            <a class="nav-link" href="#">Favorites</a>
+            <a class="nav-link" href="#">Cart</a>
+
+          </div>
+
+        </div>
+        <div class="d-flex align-items-center gap-2">
+          <img src="./assets/img/Logo.png" width="40" alt="Logo" />
+          <span class="fw-bold fs-5">Luminae</span>
+        </div>
+        <i class="fa-solid fa-bag-shopping d-flex d-md-none" data-bs-toggle="collapse" data-bs-target="#navbarText"
+          aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+
+        </i>
+        <form class="d-none d-md-flex align-items-center border search-box mx-4">
+          <input class="form-control border-0" type="search" placeholder="Search Products" />
+          <select class="form-select border-0">
+            <option>All categories</option>
+          </select>
+          <button class="btn border-start">
+            <i class="fa fa-search"></i>
+          </button>
+        </form>
+
+        <div class="d-flex align-items-center gap-4">
+          <div class="d-none d-md-flex gap-3">
+            <a href="#" class="text-dark text-decoration-none">About us</a>
+            <a href="#" class="text-dark text-decoration-none">Blog</a>
+            <a href="#" class="text-dark text-decoration-none">Contact us</a>
+            <a href="#" class="text-dark text-decoration-none">Help & support</a>
+          </div>
+
+          <nav class="social-media">
+            <div class="d-flex justify-content-center gap-3">
+              <a href="" target="_blank" class="text-dark">
+                <i class="fab fa-instagram fa-lg"></i>
+              </a>
+              <a href="" target="_blank" class="text-dark">
+                <i class="fab fa-facebook fa-lg"></i>
+              </a>
+              <a href="" target="_blank" class="text-dark">
+                <i class="fab fa-telegram fa-lg"></i>
+              </a>
+            </div>
+          </nav>
+        </div>
+
+      </div>
+    </div>
+  </nav>
+  <nav class="black-navbar bg-dark text-white py-2 me-auto">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <div class="nav-left d-flex align-items-center gap-5">
+
+        <div class="categories d-flex align-items-center gap-2">
+          <i class="fa-solid fa-bars-staggered"></i>
+          <span>Categories</span>
+        </div>
+
+        <div class="currencies">
+          <a class="nav-link dropdown-toggle text-white p-0" href="#" data-bs-toggle="dropdown">
+            USD
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">USD</a></li>
+            <li><a class="dropdown-item" href="#">EUR</a></li>
+            <li><a class="dropdown-item" href="#">SAR</a></li>
+          </ul>
+        </div>
+
+        <div class="languages">
+          <a class="nav-link dropdown-toggle text-white p-0" href="#" data-bs-toggle="dropdown">
+            English
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">English</a></li>
+            <li><a class="dropdown-item" href="#">Arabic</a></li>
+            <li><a class="dropdown-item" href="#">French</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="nav-center d-none d-lg-flex align-items-center gap-3 custom-border px-4">
+        <img src="./assets/img/men-cosmetics-navbar2.png" width="50" />
+
+        <div class="d-flex flex-column">
+          <span class="">Weekly Men's Toiletries Coupons</span>
+          <p class="">We extend exclusive discounts to our male clientele</p>
+        </div>
+      </div>
+
+      <div class="nav-right d-flex align-items-center gap-5">
+
+        <div class="nav-item d-flex align-items-center gap-1">
+          <i class="fa-regular fa-user"></i>
+            <a class="nav-link text-white" href="auth.html">Sign in</a>
+        </div>
+
+        <div class="nav-item d-flex align-items-center gap-1">
+          <i class="fa-regular fa-heart"></i>
+          <span>Favorites</span>
+        </div>
+
+        <div class="nav-item d-flex align-items-center gap-1">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span>Card</span>
+          <span class="badge rounded-pill text-bg-success">3</span>
+
+        </div>
+
+      </div>
+
+    </div>
+  </nav>
+
+
+</section>
+
+
+<div class="page-links p-4">
+    <div class="container">
+        <div class="d-flex justify-content-start">
+            <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);"
+                aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a class="text-decoration-none text-dark" href="index.html">HomePage</a>
+                    </li>
+                    <li class="breadcrumb-item"><a class="text-decoration-none text-dark" href="index.html">Woman</a>
+                    </li>
+                    <li class="breadcrumb-item"><a class="text-decoration-none text-dark"
+                            href="details.html">Colthes</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Zara</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+</div>
+<section class="auth py-5">
+  <div class="container">
+    <div class="row g-4">
+      
+      <div class="col-12 col-lg-6">
+        <div class="p-4 border rounded bg-white h-100">
+          <h4 class="mb-4">Sign In</h4>
+
+          <form>
+             <div class="input-group mb-3">
+  <input type="text" class="form-control" placeholder="Enter email" aria-label="Email" aria-describedby="basic-addon2">
+  <span class="input-group-text" id="basic-addon2">@</span>
+</div>
+ 
+            <div class="mb-3">
+              <label class="form-label">Password</label>
+              <input type="password" class="form-control" placeholder="Enter password">
+            </div>
+
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <div>
+                <input type="checkbox" id="remember">
+                <label for="remember">Remember for 30 days</label>
+              </div>
+              <a href="#" class="small">Forgot password?</a>
+            </div>
+
+            <button class="btn btn-dark w-100 mb-3">Sign In</button>
+
+            <button class="btn btn-outline-dark w-100">
+              <i class="fab fa-google me-2"></i> Sign in with Google
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <div class="col-12 col-lg-6">
+        <div class="p-4 border rounded bg-white h-100">
+          <h4 class="mb-4">Sign Up</h4>
+
+          <form>
+            <div class="mb-3">
+              <label class="form-label">Name</label>
+              <input type="text" class="form-control" placeholder="Full name">
+            </div>
+
+             <div class="input-group mb-3">
+  <input type="text" class="form-control" placeholder="Enter email" aria-label="Email" aria-describedby="basic-addon2">
+  <span class="input-group-text" id="basic-addon2">@</span>
+</div>
+
+            <div class="mb-3">
+              <label class="form-label">Password</label>
+              <input type="password" class="form-control" placeholder="Enter password">
+            </div>
+
+            <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input" id="terms">
+              <label class="form-check-label" for="terms">
+                I agree to terms & conditions
+              </label>
+            </div>
+
+            <button class="btn btn-dark w-100 mb-3">Sign Up</button>
+
+            <button class="btn btn-outline-dark w-100">
+              <i class="fab fa-google me-2"></i> Sign up with Google
+            </button>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+    
+<section class="footer  position-relative">
+
+    <div class="newsletter  position-relative">
+        <div class="card newsletter-card  position-absolute w-auto p-3">
+            <div class="card-body text-center">
+                <h3 class="card-title">Luminae Store</h3>
+                <p class="card-text">Register your email not to miss the last minutes off + Free delivery</p>
+                <div class="input-group mx-auto w-75">
+                    <input type="email" class="form-control" placeholder="Enter your email"
+                        aria-label="Enter your email" aria-describedby="button-addon2">
+                    <button class="btn btn-light" type="button" id="button-addon2"><i
+                            class="fa-regular fa-paper-plane"></i></button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="links-section">
+        <div class="container ">
+            <div class="row row-gap-5">
+                <div class="d-flex flex-column align-items-center text-start  col-lg-3 col-6 gap-3">
+                    <h2>Company</h2>
+                    <a href="#">About Us</a>
+                    <a href="#">Our Store</a>
+                    <a href="#">Contact us</a>
+                </div>
+
+                <div class="d-flex flex-column align-items-center text-start col-lg-3 col-6 gap-3">
+                    <h2>Career Opportunities</h2>
+                    <a href="#">Selling Programs</a>
+                    <a href="#">Advertise</a>
+                    <a href="#">Cooperation</a>
+                </div>
+
+                <div class="d-flex flex-column align-items-center text-start col-lg-3 col-6 gap-3">
+                    <h2>How to Buy</h2>
+                    <a href="#">Making Payments</a>
+                    <a href="#">Delivery Options</a>
+                    <a href="#">Buyer Protection</a>
+                    <a href="#">New User Guide</a>
+                </div>
+
+                <div class="d-flex flex-column align-items-center text-start col-lg-3 col-6 gap-3">
+                    <h2>Help</h2>
+                    <a href="#">Contact Us</a>
+                    <a href="#">FAQ</a>
+                    <a href="#">Privacy Policy</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="container px-5 ">
+        <div class="row">
+            <div class="d-flex justify-content-center justify-content-md-between py-3">
+                <div class="footer-imgs d-flex gap-4 align-items-center">
+                    <img src="./assets/img/footer-visa.png" class="img-fluid" alt="visa image">
+                    <img src="./assets/img/footer-mastercard.png" class="img-fluid" alt="master card image">
+                    <img src="./assets/img/footer-paypal.png" class="img-fluid" alt="paypal image">
+                </div>
+                <div class="dropdown">
+                    <button class="dropdown-toggle border-0 bg-white" type="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        English
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item active" href="#" selected>English</a></li>
+                        <li><a class="dropdown-item" href="#">Arabic</a></li>
+                        <li><a class="dropdown-item" href="#">French</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <hr class="border border-secondary border-2 opacity-25">
+
+        <div class="d-flex justify-content-between gap-3 my-5">
+            <p>165-179 Forster Road City of Monash, Melbourne, Australia</p>
+            <p class="copyright gray-text">©2023 Copyright in reserved for lumine shop</p>
+            <nav class="social-media">
+                <div class="d-flex justify-content-center gap-3">
+                    <a href="" target="_blank" class="text-dark">
+                        <i class="fab fa-facebook fa-lg"></i>
+                    </a>
+                    <a href="" target="_blank" class="text-dark">
+                        <i class="fab fa-instagram fa-lg"></i>
+                    </a>
+                    <a href="" target="_blank" class="text-dark">
+                        <i class="fab fa-telegram fa-lg"></i>
+                    </a>
+            </nav>
+        </div>
+    </div>
+    </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+
+</body>
+
+</html>
