@@ -1,431 +1,459 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Responsive E-commerce Product Page</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-<style>
-  .size-btn.active, .color-btn.active { border-width: 2px; border-color: #0d6efd !important; }
-  .product-description.collapsed { max-height: 120px; overflow: hidden; }
-  .product-description.show { max-height: 2000px; }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luminae</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/css/main.css">
 </head>
-<body>
 
-<section class="shop py-5">
-  <div class="container">
-    <div class="row">
 
-      <!-- Sidebar Desktop -->
-      <div class="col-lg-3 mb-4 d-none d-lg-block">
-        <h5 class="fw-bold mb-3">All Categories</h5>
-        <!-- Brand -->
-        <div class="mb-4">
-          <h6 class="fw-bold">Brand</h6>
-          <input type="text" class="form-control" placeholder="Search">
-        </div>
-        <!-- Model -->
-        <div class="mb-4">
-          <h6 class="fw-bold">Model</h6>
-          <div class="form-check"><input class="form-check-input" type="checkbox" id="modelShort"><label class="form-check-label" for="modelShort">Short</label></div>
-          <div class="form-check"><input class="form-check-input" type="checkbox" id="modelMidi"><label class="form-check-label" for="modelMidi">Midi length</label></div>
-          <div class="form-check"><input class="form-check-input" type="checkbox" id="modelSweater"><label class="form-check-label" for="modelSweater">Sweater</label></div>
-        </div>
-        <!-- Style -->
-        <div class="mb-4">
-          <h6 class="fw-bold">Style</h6>
-          <div class="form-check"><input class="form-check-input" type="checkbox" id="styleCasual"><label class="form-check-label" for="styleCasual">Casual</label></div>
-          <div class="form-check"><input class="form-check-input" type="checkbox" id="styleBusiness"><label class="form-check-label" for="styleBusiness">Business</label></div>
-          <div class="form-check"><input class="form-check-input" type="checkbox" id="styleElegant"><label class="form-check-label" for="styleElegant">Elegant</label></div>
-        </div>
-        <!-- Color -->
-        <div class="mb-4">
-          <h6 class="fw-bold">Color</h6>
-          <div class="d-flex gap-2">
-            <button class="btn btn-sm rounded-circle p-2 border color-btn" style="background-color:#000;"></button>
-            <button class="btn btn-sm rounded-circle p-2 border color-btn" style="background-color:#f00;"></button>
-            <button class="btn btn-sm rounded-circle p-2 border color-btn" style="background-color:#ff0;"></button>
-            <button class="btn btn-sm rounded-circle p-2 border color-btn" style="background-color:#0f0;"></button>
-          </div>
-        </div>
-        <!-- Size -->
-        <div class="mb-4">
-          <h6 class="fw-bold">Size</h6>
-          <div class="d-flex flex-wrap gap-2">
-            <button class="btn btn-outline-secondary btn-sm size-btn">2XS</button>
-            <button class="btn btn-outline-secondary btn-sm size-btn">XS</button>
-            <button class="btn btn-outline-secondary btn-sm size-btn">S</button>
-            <button class="btn btn-outline-secondary btn-sm size-btn">M</button>
-            <button class="btn btn-outline-secondary btn-sm size-btn">L</button>
-            <button class="btn btn-outline-secondary btn-sm size-btn">XL</button>
-            <button class="btn btn-outline-secondary btn-sm size-btn">2XL</button>
-            <button class="btn btn-outline-secondary btn-sm size-btn">3XL</button>
-          </div>
-        </div>
-        <!-- Price -->
-        <div class="mb-4">
-          <h6 class="fw-bold">Price</h6>
-          <div class="d-flex align-items-center gap-2 mb-2">
-            <input type="number" class="form-control form-control-sm" placeholder="$0" style="width: 70px;">
-            <span>-</span>
-            <input type="number" class="form-control form-control-sm" placeholder="$500" style="width: 70px;">
-          </div>
-          <input type="range" class="form-range" min="0" max="500" step="10">
-          <small class="text-muted">878 products found</small>
-        </div>
-      </div>
-
-      <!-- Mobile Filter Button -->
-      <div class="col-12 d-lg-none mb-3">
-        <button class="btn btn-primary w-100" data-bs-toggle="offcanvas" data-bs-target="#mobileFilter">Filter & Sort</button>
-      </div>
-
-      <!-- Offcanvas for Mobile Filter -->
-      <div class="offcanvas offcanvas-start" tabindex="-1" id="mobileFilter">
-        <div class="offcanvas-header">
-          <h5 class="offcanvas-title">Filter Products</h5>
-          <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
-        </div>
-        <div class="offcanvas-body">
-          <!-- replicate sidebar content here -->
-          <h6 class="fw-bold">Brand</h6>
-          <input type="text" class="form-control mb-3" placeholder="Search">
-          <h6 class="fw-bold">Model</h6>
-          <div class="form-check"><input class="form-check-input" type="checkbox"><label class="form-check-label">Short</label></div>
-          <div class="form-check"><input class="form-check-input" type="checkbox"><label class="form-check-label">Midi</label></div>
-          <div class="form-check"><input class="form-check-input" type="checkbox"><label class="form-check-label">Sweater</label></div>
-          <!-- Repeat Style, Color, Size, Price -->
-        </div>
-      </div>
-
-      <!-- Products Grid / Product Details Column -->
-      <div class="col-lg-9">
-
-        <!-- Product Details -->
-        <div class="row g-4">
-          <!-- Images + Info -->
-          <div class="col-12">
-            <div class="row g-3">
-              <div class="col-lg-6">
-                <div class="ratio ratio-1x1 mb-2">
-                  <img src="./assets/img/product-main.png" class="w-100 h-100" style="object-fit:cover;" alt="Product">
-                </div>
-                <div class="d-flex gap-2 overflow-auto">
-                  <img src="./assets/img/thumb1.png" class="img-thumbnail flex-shrink-0" style="width:80px;" alt="Thumb">
-                  <img src="./assets/img/thumb2.png" class="img-thumbnail flex-shrink-0" style="width:80px;" alt="Thumb">
-                  <img src="./assets/img/thumb3.png" class="img-thumbnail flex-shrink-0" style="width:80px;" alt="Thumb">
-                  <img src="./assets/img/thumb4.png" class="img-thumbnail flex-shrink-0" style="width:80px;" alt="Thumb">
-                </div>
-              </div>
-              <div class="col-lg-6">
-                <h3 class="fw-bold">SHORT PRINTED DRESS</h3>
-                <p class="h5 text-danger">$39.99</p>
-
-                <!-- Size -->
-                <div class="mb-2">
-                  <h6 class="fw-bold d-flex justify-content-between">
-                    Size <a href="#" class="small text-decoration-none">Size guideline</a>
-                  </h6>
-                  <div class="d-flex gap-2 flex-wrap">
-                    <button class="btn btn-outline-secondary btn-sm size-btn">XS</button>
-                    <button class="btn btn-outline-secondary btn-sm size-btn">S</button>
-                    <button class="btn btn-outline-secondary btn-sm size-btn">M</button>
-                    <button class="btn btn-outline-secondary btn-sm size-btn">L</button>
-                    <button class="btn btn-outline-secondary btn-sm size-btn">XL</button>
-                  </div>
-                </div>
-
-                <!-- Color -->
-                <div class="mb-2">
-                  <h6 class="fw-bold">Color</h6>
-                  <div class="d-flex gap-2">
-                    <button class="btn btn-sm rounded-circle p-2 border color-btn" style="background-color:#800020;"></button>
-                    <button class="btn btn-sm rounded-circle p-2 border color-btn" style="background-color:#008000;"></button>
-                    <button class="btn btn-sm rounded-circle p-2 border color-btn" style="background-color:#0000FF;"></button>
-                    <button class="btn btn-sm rounded-circle p-2 border color-btn" style="background-color:#FFA500;"></button>
-                  </div>
-                </div>
-
-                <!-- Quantity -->
-                <div class="mb-2">
-                  <h6 class="fw-bold">Quantity</h6>
-                  <div class="input-group w-50 mb-1">
-                    <button class="btn btn-outline-secondary" id="minusBtn">-</button>
-                    <input type="number" class="form-control text-center" value="2" min="1" id="quantityInput">
-                    <button class="btn btn-outline-secondary" id="plusBtn">+</button>
-                  </div>
-                  <small class="text-muted">50 available / 104 sold</small>
-                </div>
-
-                <!-- Price / Insurance -->
-                <div class="mb-3 p-3 bg-light border">
-                  <p class="mb-0 fw-bold">$79.98</p>
-                  <small>Add shipping insurance for $9...</small>
-                </div>
-
-                <!-- Buttons -->
-                <div class="mb-3 d-flex gap-2 flex-column">
-                  <button class="btn btn-primary w-100">SHOP NOW</button>
-                  <button class="btn btn-outline-secondary w-100">ADD TO BASKET</button>
-                </div>
-
-                <!-- Tabs -->
-                <ul class="nav nav-tabs mb-3" id="productTab" role="tablist">
-                  <li class="nav-item"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#detailsTab">Details</button></li>
-                  <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#reviewsTab">Reviews</button></li>
-                  <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#shippingTab">Shipping</button></li>
+<!-- <header class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container ml-90">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+                aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div>
+                <img src="./assets/img/Logo.png" />
+                <a class="navbar-brand" href="#">Luminae</a>
+            </div>
+              <i class="fa-solid fa-bag-shopping"  data-bs-toggle="collapse" data-bs-target="#navbarText"
+                aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            
+            </i>
+                
+             <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Pricing</a>
+                    </li>
                 </ul>
-                <div class="tab-content">
-                  <div class="tab-pane fade show active" id="detailsTab">
-                    <div class="product-description collapsed" id="productDesc">
-                      <p>Short dress with plunging V-neckline, wide sleeves, floral pattern...</p>
-                    </div>
-                    <button class="btn btn-link p-0" id="toggleDesc">SHOW MORE</button>
-                  </div>
-                  <div class="tab-pane fade" id="reviewsTab"><p class="small">Customer reviews...</p></div>
-                  <div class="tab-pane fade" id="shippingTab"><p class="small">Shipping & Payment info...</p></div>
-                </div>
-
-              </div>
-            </div>
-          </div>
-
-          <!-- You Might Also Like -->
-          <div class="col-12 mt-4">
-            <h5 class="fw-bold mb-3">You Might Also Like</h5>
-            <div class="d-flex gap-2 overflow-auto">
-              <div class="card border-0 flex-shrink-0" style="width:120px;">
-                <img src="./assets/img/p1.png" class="card-img-top" alt="Product">
-                <div class="card-body p-2"><p class="mb-1 small">Short Printed Dress</p><span class="fw-bold text-danger">$69.99</span></div>
-              </div>
-              <div class="card border-0 flex-shrink-0" style="width:120px;">
-                <img src="./assets/img/p2.png" class="card-img-top" alt="Product">
-                <div class="card-body p-2"><p class="mb-1 small">Short Printed Dress</p><span class="fw-bold text-danger">$69.99</span></div>
-              </div>
-            </div>
-          </div>
-
+                <span class="navbar-text">
+                    Navbar text with an inline element
+                </span>
         </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-<section class="shop py-5">
-  <div class="container">
-    <div class="row">
-
-      <!-- Sidebar for Desktop -->
-      <div class="col-lg-3 mb-4 d-none d-lg-block">
-        <!-- Include previous sidebar content here -->
-        <h5 class="fw-bold mb-3">All Categories</h5>
-        <!-- Brand -->
-        <div class="mb-4">
-          <h6 class="fw-bold">Brand</h6>
-          <input type="text" class="form-control" placeholder="Search">
         </div>
-        <!-- Model -->
-        <div class="mb-4">
-          <h6 class="fw-bold">Model</h6>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="modelShort">
-            <label class="form-check-label" for="modelShort">Short</label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="modelMidi">
-            <label class="form-check-label" for="modelMidi">Midi length</label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="modelSweater">
-            <label class="form-check-label" for="modelSweater">Sweater</label>
-          </div>
-        </div>
-        <!-- Style, Color, Size, Price ... ضع بقية الفلاتر هنا كما في النسخة السابقة -->
-      </div>
+    </header> --->
+   <section class="header">
+  <nav class="navbar navbar-expand-lg bg-white border-bottom py-3">
+    <div class="container">
 
-      <!-- Mobile Filter Button -->
-      <div class="col-12 d-lg-none mb-3">
-        <button class="btn btn-primary w-100" data-bs-toggle="offcanvas" data-bs-target="#mobileFilter" aria-controls="mobileFilter">
-          Filter & Sort
+      <div class="d-flex justify-content-between w-100 align-items-center">
+        <button class="navbar-toggler d-flex d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu">
+          <span class="navbar-toggler-icon"></span>
         </button>
-      </div>
+        <div class="offcanvas offcanvas-start d-flex d-md-none" tabindex="-1" id="mobileMenu">
 
-      <!-- Offcanvas for Mobile Filter -->
-      <div class="offcanvas offcanvas-start" tabindex="-1" id="mobileFilter" aria-labelledby="mobileFilterLabel">
-        <div class="offcanvas-header">
-          <h5 class="offcanvas-title" id="mobileFilterLabel">Filter Products</h5>
-          <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
-        </div>
-        <div class="offcanvas-body">
-          <!-- Include same sidebar content here -->
-          <h6 class="fw-bold">Brand</h6>
-          <input type="text" class="form-control mb-3" placeholder="Search">
-          <h6 class="fw-bold">Model</h6>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="mModelShort">
-            <label class="form-check-label" for="mModelShort">Short</label>
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title">Menu</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
           </div>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="mModelMidi">
-            <label class="form-check-label" for="mModelMidi">Midi length</label>
-          </div>
-          <!-- ضع بقية الفلاتر هنا بنفس أسلوب النسخة السابقة -->
-        </div>
-      </div>
 
-      <!-- Products -->
-      <div class="col-lg-9">
-        <div class="d-flex justify-content-between align-items-center mb-4">
-          <h5 class="fw-bold">Women <span class="text-muted">(110 items)</span></h5>
-          <select class="form-select w-auto">
-            <option>Sort by</option>
-            <option>Price</option>
-            <option>Popular</option>
+          <div class="offcanvas-body">
+
+            <a class="nav-link" href="aboutUs.html">About us</a>
+            <a class="nav-link" href="#">Blog</a>
+            <a class="nav-link" href="#">Contact us</a>
+            <a class="nav-link" href="#">Help & support</a>
+
+            <hr>
+
+            <div class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle active" href="./details.html" role="button" data-bs-toggle="dropdown">
+                Woman
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="details.html">Clothes</a></li>
+                <li><a class="dropdown-item" href="#">Electronic</a></li>
+              </ul>
+            </div> <a class="nav-link" href="#">Male</a>
+            <a class="nav-link" href="#">Mother-Child</a>
+            <a class="nav-link" href="#">Home & Furniture</a>
+            <a class="nav-link" href="#">Cosmetics</a>
+
+            <hr>
+
+            <a class="nav-link text-white" href="auth.html">Sign in</a>
+            <a class="nav-link" href="#">Favorites</a>
+            <a class="nav-link" href="#">Cart</a>
+
+          </div>
+
+        </div>
+        <div class="d-flex align-items-center gap-2">
+          <img src="./assets/img/Logo.png" width="40" alt="Logo" />
+          <span class="fw-bold fs-5">Luminae</span>
+        </div>
+        <i class="fa-solid fa-bag-shopping d-flex d-md-none" data-bs-toggle="collapse" data-bs-target="#navbarText"
+          aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+
+        </i>
+        <form class="d-none d-md-flex align-items-center border search-box mx-4">
+          <input class="form-control border-0" type="search" placeholder="Search Products" />
+          <select class="form-select border-0">
+            <option>All categories</option>
           </select>
-        </div>
-
-        <!-- Grid -->
-        <div class="row g-4">
-          <!-- كرر الكروت كما في النسخة السابقة -->
-          <div class="col-md-4 col-sm-6 d-flex">
-            <div class="card w-100 h-100 border-0 shadow-sm">
-              <div class="ratio ratio-1x1">
-                <img src="./assets/img/p1.png" class="w-100 h-100" style="object-fit:cover;">
-              </div>
-              <div class="card-body">
-                <h6 class="mb-1">Mango</h6>
-                <p class="text-muted small">Kimono & Caftan - Black</p>
-                <div class="text-warning small mb-1">★★★★☆ <span class="text-muted">(289)</span></div>
-                <div>
-                  <span class="fw-bold text-danger">$228</span>
-                  <span class="text-muted text-decoration-line-through">$290</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
- 
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>E-commerce UI</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body>
-
-<div class="container py-5">
-
-  <!-- Header Section -->
-  <div class="row align-items-center mb-5">
-    <div class="col-lg-7 col-md-12">
-      <h1>Providing the best experience to make your <span class="text-primary">Online Shopping</span></h1>
-      <p>We offer the best service that will make it easier...</p>
-
-      <div class="d-flex gap-4 mt-4">
-        <div>
-          <h4>20+</h4>
-          <p>Shopping Categories</p>
-        </div>
-        <div>
-          <h4>10+</h4>
-          <p>Different Services</p>
-        </div>
-        <div>
-          <h4>4M+</h4>
-          <p>Happy Users</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-lg-5 col-md-12 text-center">
-      <div class="border p-3">
-        <blockquote class="blockquote">
-          <p>We have made many people satisfied with our Platform</p>
-        </blockquote>
-      </div>
-    </div>
-  </div>
-
-  <!-- Service Section -->
-  <div class="row align-items-center mb-5">
-    <div class="col-lg-6 col-md-12 mb-4 mb-lg-0">
-      <h3>We offer the best service that will <span class="text-primary">make it easier</span></h3>
-      <p>Discover unparalleled convenience...</p>
-
-      <div class="row row-cols-1 row-cols-md-2 g-3 mt-3">
-        <div class="col">
-          <div class="card h-100">
-            <div class="card-body">
-              <h5 class="card-title">Fast Delivery</h5>
-              <p class="card-text">Experience quick shipping with our trusted partners.</p>
-              <a href="#" class="btn btn-primary btn-sm">Read More</a>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card h-100">
-            <div class="card-body">
-              <h5 class="card-title">24/7 Support</h5>
-              <p class="card-text">We are here to help you anytime with our team.</p>
-              <a href="#" class="btn btn-primary btn-sm">Read More</a>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card h-100">
-            <div class="card-body">
-              <h5 class="card-title">Easy Returns</h5>
-              <p class="card-text">Return your orders quickly with no hassle.</p>
-              <a href="#" class="btn btn-primary btn-sm">Read More</a>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card h-100">
-            <div class="card-body">
-              <h5 class="card-title">Secure Payments</h5>
-              <p class="card-text">Your transactions are safe with our secure system.</p>
-              <a href="#" class="btn btn-primary btn-sm">Read More</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-lg-6 col-md-12 text-center">
-      <img src="./assets/img/zaraMain.png" class="img-fluid rounded" alt="Team Image">
-    </div>
-  </div>
-
-  <!-- Contact Section -->
-  <div class="row align-items-center">
-    <div class="col-lg-6 col-md-12 mb-4 mb-lg-0">
-      <div class="p-4 bg-dark text-white rounded">
-        <h4>Tell us about your <span class="text-warning">Concerns</span></h4>
-        <form>
-          <input type="text" class="form-control mb-3" placeholder="Your Name">
-          <input type="email" class="form-control mb-3" placeholder="Your Email">
-          <textarea class="form-control mb-3" placeholder="Your Message"></textarea>
-          <button class="btn btn-primary w-100">Send</button>
+          <button class="btn border-start">
+            <i class="fa fa-search"></i>
+          </button>
         </form>
+
+        <div class="d-flex align-items-center gap-4">
+          <div class="d-none d-md-flex gap-3">
+            <a href="aboutUs.html" class="text-dark text-decoration-none">About us</a>
+            <a href="#" class="text-dark text-decoration-none">Blog</a>
+            <a href="#" class="text-dark text-decoration-none">Contact us</a>
+            <a href="#" class="text-dark text-decoration-none">Help & support</a>
+          </div>
+
+          <nav class="social-media">
+            <div class="d-flex justify-content-center gap-3">
+              <a href="" target="_blank" class="text-dark">
+                <i class="fab fa-instagram fa-lg"></i>
+              </a>
+              <a href="" target="_blank" class="text-dark">
+                <i class="fab fa-facebook fa-lg"></i>
+              </a>
+              <a href="" target="_blank" class="text-dark">
+                <i class="fab fa-telegram fa-lg"></i>
+              </a>
+            </div>
+          </nav>
+        </div>
+
       </div>
     </div>
+  </nav>
+  <nav class="black-navbar bg-dark text-white py-2 me-auto">
+    <div class="container d-flex align-items-center justify-content-between">
 
-    <div class="col-lg-6 col-md-12 text-center">
-      <img src="fashion.jpg" class="img-fluid rounded" alt="Fashion Models">
+      <div class="nav-left d-flex align-items-center gap-5">
+
+        <div class="categories d-flex align-items-center gap-2">
+          <i class="fa-solid fa-bars-staggered"></i>
+          <span>Categories</span>
+        </div>
+
+        <div class="currencies">
+          <a class="nav-link dropdown-toggle text-white p-0" href="#" data-bs-toggle="dropdown">
+            USD
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">USD</a></li>
+            <li><a class="dropdown-item" href="#">EUR</a></li>
+            <li><a class="dropdown-item" href="#">SAR</a></li>
+          </ul>
+        </div>
+
+        <div class="languages">
+          <a class="nav-link dropdown-toggle text-white p-0" href="#" data-bs-toggle="dropdown">
+            English
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">English</a></li>
+            <li><a class="dropdown-item" href="#">Arabic</a></li>
+            <li><a class="dropdown-item" href="#">French</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="nav-center d-none d-lg-flex align-items-center gap-3 custom-border px-4">
+        <img src="./assets/img/men-cosmetics-navbar2.png" width="50" />
+
+        <div class="d-flex flex-column">
+          <span class="">Weekly Men's Toiletries Coupons</span>
+          <p class="">We extend exclusive discounts to our male clientele</p>
+        </div>
+      </div>
+
+      <div class="nav-right d-flex align-items-center gap-5">
+
+        <div class="nav-item d-flex align-items-center gap-1">
+          <i class="fa-regular fa-user"></i>
+            <a class="nav-link text-white" href="auth.html">Sign in</a>
+        </div>
+
+        <div class="nav-item d-flex align-items-center gap-1">
+          <i class="fa-regular fa-heart"></i>
+          <span>Favorites</span>
+        </div>
+
+        <div class="nav-item d-flex align-items-center gap-1">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span>Card</span>
+          <span class="badge rounded-pill text-bg-success">3</span>
+
+        </div>
+
+      </div>
+
     </div>
-  </div>
+  </nav>
 
+
+</section>
+
+<div class="page-links p-4">
+    <div class="container">
+        <div class="d-flex justify-content-start">
+            <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);"
+                aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a class="text-decoration-none text-dark" href="index.html">HomePage</a>
+                    </li>
+                    <li class="breadcrumb-item active" aria-current="page">About-us</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+<body>
+
+<section class="about py-5">
+  <div class="container">
+
+    <div class="row align-items-center g-4 mb-5">
+
+      <div class="col-lg-7">
+        <span class="text-muted small">Let’s get to know Luminae</span>
+
+        <h1 class="fw-bold mt-2">
+          Providing the best experience to make your
+          <span class="text-primary">Online Shopping</span>
+        </h1>
+
+        <p class="text-muted mt-3">
+          We offer you a seamless shopping journey with a wide selection of products
+          and top-tier customer service.
+        </p>
+
+        <div class="d-flex flex-wrap gap-4 mt-4">
+          <div>
+            <h4 class="fw-bold">20+</h4>
+            <small class="text-muted">Categories</small>
+          </div>
+          <div>
+            <h4 class="fw-bold">10+</h4>
+            <small class="text-muted">Services</small>
+          </div>
+          <div>
+            <h4 class="fw-bold">4M+</h4>
+            <small class="text-muted">Users</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-5">
+        <div class="bg-light p-4 rounded position-relative">
+          <p class="mb-0">
+            “We have made many people satisfied with our platform.”
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="row align-items-center g-4 mb-5">
+
+      <div class="col-lg-6">
+
+        <span class="text-muted small">Know our service</span>
+
+        <h3 class="fw-bold mt-2">
+          We offer the best service that will
+          <span class="text-primary">make it easier</span>
+        </h3>
+
+        <p class="text-muted mt-3">
+          Discover the best services that simplify your shopping experience
+          with reliability and speed.
+        </p>
+
+        <div class="row g-3 mt-3">
+
+          <div class="col-6">
+            <div class="p-3 border rounded h-100 text-center">
+              <h6 class="fw-bold">Fast Delivery</h6>
+              <button class="btn btn-primary btn-sm mt-2">Read more</button>
+            </div>
+          </div>
+
+          <div class="col-6">
+            <div class="p-3 border rounded h-100 text-center">
+              <h6 class="fw-bold">Secure Payment</h6>
+              <button class="btn btn-primary btn-sm mt-2">Read more</button>
+            </div>
+          </div>
+
+          <div class="col-6">
+            <div class="p-3 border rounded h-100 text-center">
+              <h6 class="fw-bold">Easy Return</h6>
+              <button class="btn btn-primary btn-sm mt-2">Read more</button>
+            </div>
+          </div>
+
+          <div class="col-6">
+            <div class="p-3 border rounded h-100 text-center">
+              <h6 class="fw-bold">24/7 Support</h6>
+              <button class="btn btn-primary btn-sm mt-2">Read more</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="col-lg-6 text-center">
+        <img src="./assets/img/team.png" class="img-fluid rounded" alt="">
+      </div>
+
+    </div>
+
+    <div class="row align-items-center g-0">
+
+      <div class="col-lg-6">
+        <div class="bg-dark text-white p-4 rounded">
+          <h4 class="fw-bold">
+            Tell us about your
+            <span class="text-warning">Concerns</span>
+          </h4>
+
+          <form class="mt-3">
+            <input type="text" class="form-control mb-3" placeholder="Your Name">
+            <input type="email" class="form-control mb-3" placeholder="Your Email">
+            <textarea class="form-control mb-3" rows="4" placeholder="Your Message"></textarea>
+            <button class="btn btn-primary w-100">Send</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="col-lg-6 d-flex align-items-start">
+        <img src="./assets/img/heroImg.png" class="img-fluid rounded" alt="">
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
 </body>
+    
+<section class="footer  position-relative">
+
+    <div class="newsletter  position-relative">
+        <div class="card newsletter-card  position-absolute w-auto p-3">
+            <div class="card-body text-center">
+                <h3 class="card-title">Luminae Store</h3>
+                <p class="card-text">Register your email not to miss the last minutes off + Free delivery</p>
+                <div class="input-group mx-auto w-75">
+                    <input type="email" class="form-control" placeholder="Enter your email"
+                        aria-label="Enter your email" aria-describedby="button-addon2">
+                    <button class="btn btn-light" type="button" id="button-addon2"><i
+                            class="fa-regular fa-paper-plane"></i></button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="links-section">
+        <div class="container ">
+            <div class="row row-gap-5">
+                <div class="d-flex flex-column align-items-center text-start  col-lg-3 col-6 gap-3">
+                    <h2>Company</h2>
+                    <a href="aboutUs.html">About Us</a>
+                    <a href="#">Our Store</a>
+                    <a href="#">Contact us</a>
+                </div>
+
+                <div class="d-flex flex-column align-items-center text-start col-lg-3 col-6 gap-3">
+                    <h2>Career Opportunities</h2>
+                    <a href="#">Selling Programs</a>
+                    <a href="#">Advertise</a>
+                    <a href="#">Cooperation</a>
+                </div>
+
+                <div class="d-flex flex-column align-items-center text-start col-lg-3 col-6 gap-3">
+                    <h2>How to Buy</h2>
+                    <a href="#">Making Payments</a>
+                    <a href="#">Delivery Options</a>
+                    <a href="#">Buyer Protection</a>
+                    <a href="#">New User Guide</a>
+                </div>
+
+                <div class="d-flex flex-column align-items-center text-start col-lg-3 col-6 gap-3">
+                    <h2>Help</h2>
+                    <a href="#">Contact Us</a>
+                    <a href="#">FAQ</a>
+                    <a href="#">Privacy Policy</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="container px-5 ">
+        <div class="row">
+            <div class="d-flex justify-content-center justify-content-md-between py-3">
+                <div class="footer-imgs d-flex gap-4 align-items-center">
+                    <img src="./assets/img/footer-visa.png" class="img-fluid" alt="visa image">
+                    <img src="./assets/img/footer-mastercard.png" class="img-fluid" alt="master card image">
+                    <img src="./assets/img/footer-paypal.png" class="img-fluid" alt="paypal image">
+                </div>
+                <div class="dropdown">
+                    <button class="dropdown-toggle border-0 bg-white" type="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        English
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item active" href="#" selected>English</a></li>
+                        <li><a class="dropdown-item" href="#">Arabic</a></li>
+                        <li><a class="dropdown-item" href="#">French</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <hr class="border border-secondary border-2 opacity-25">
+
+        <div class="d-flex justify-content-between gap-3 my-5">
+            <p>165-179 Forster Road City of Monash, Melbourne, Australia</p>
+            <p class="copyright gray-text">©2023 Copyright in reserved for lumine shop</p>
+            <nav class="social-media">
+                <div class="d-flex justify-content-center gap-3">
+                    <a href="" target="_blank" class="text-dark">
+                        <i class="fab fa-facebook fa-lg"></i>
+                    </a>
+                    <a href="" target="_blank" class="text-dark">
+                        <i class="fab fa-instagram fa-lg"></i>
+                    </a>
+                    <a href="" target="_blank" class="text-dark">
+                        <i class="fab fa-telegram fa-lg"></i>
+                    </a>
+            </nav>
+        </div>
+    </div>
+    </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+
+</body>
+
 </html>
